@@ -1,0 +1,375 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage{minted}
+\usemintedstyle{borland}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+
+
+\newcommand*\keystroke[1]{\hspace{0.2ex}\tikz[baseline=(key.base)]\node[draw,text height=1.5ex,text depth=0ex,fill=black!10,drop shadow={shadow xshift=0.2ex,shadow yshift=-0.2ex,fill=black,opacity=0.50},rectangle,rounded corners=2pt,inner sep=2.75pt,line width=0.5pt,font=\footnotesize\sffamily] (key) {#1};\hspace{0.4ex}}
+
+\definecolor{LightGray}{gray}{0.9}
+\definecolor{BorlandBlue}{RGB}{31,31,143}
+\setlength{\parindent}{0pt}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+
+
+\title{AP Computer Science A Notes}
+\author{Pranaav Sureshkumar}
+\date{September 2023}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\newpage
+
+\section*{Unit 1}
+\addtocounter{section}{1}
+
+\subsection{Binary \& Hexadecimal}
+You are likely most familiar with the base 10 (decimal) number system in which each digit represents a power of 10. For example, in the decimal number \[2560_{10} \footnote{The subscript represents the base of the number.}\] the numeral 0 represents how many ones ($10^0$) are in the number, the numeral 6 represents how many tens ($10^1$) are in the number, the numeral 5 represents how many hundreds ($10^2$) are in the number, etc. 
+
+\vspace{1cm}
+
+Similarly, in binary, each digit represents a power of 2. For example, in the binary number \[1011_2\] the rightmost numeral one represents how many ones ($2^0$) are in the number, the numeral one directly to the left represents how many twos ($2^1$) are in the number, the numeral zero represents how many fours ($2^2$) are in the number, etc. \[\text{Therefore, } 1011_2 = 1 \cdot 8_{10} + 0 \cdot 4_{10} + 1 \cdot 2_{10} + 1 \cdot 1_{10} = 11_{10}\]
+
+\vspace{1cm}
+The following page features a binary-decimal worksheet to test your understanding.
+\newpage
+
+\section*{Practice}
+\begin{multicols}{2}
+
+\subsection*{Binary $\rightarrow$ Decimal}
+Convert each 4-digit binary number to decimal.
+\vspace{0.5cm}
+
+\begin{enumerate}[label=\arabic*.,itemsep=1cm]
+    \item $1101_2 = \underline{\hspace{1cm}}_{10}$
+    \item $1010_2 = \underline{\hspace{1cm}}_{10}$
+    \item $1111_2 = \underline{\hspace{1cm}}_{10}$
+    \item $0100_2 = \underline{\hspace{1cm}}_{10}$
+    \item $0011_2 = \underline{\hspace{1cm}}_{10}$
+    \item $1000_2 = \underline{\hspace{1cm}}_{10}$
+    \item $0110_2 = \underline{\hspace{1cm}}_{10}$
+    \item $1100_2 = \underline{\hspace{1cm}}_{10}$
+\end{enumerate}
+
+\subsection*{Decimal $\rightarrow$ Binary}
+Convert each decimal number to 4-digit binary.
+\vspace{0.5cm}
+
+\begin{enumerate}[label=\arabic*.,itemsep=1cm]
+    \setcounter{enumi}{8}
+    \item $9_{10} = \underline{\hspace{1cm}}_{2}$
+    \item $15_{10} = \underline{\hspace{1cm}}_{2}$
+    \item $6_{10} = \underline{\hspace{1cm}}_{2}$
+    \item $10_{10} = \underline{\hspace{1cm}}_{2}$
+    \item $3_{10} = \underline{\hspace{1cm}}_{2}$
+    \item $12_{10} = \underline{\hspace{1cm}}_{2}$
+    \item $14_{10} = \underline{\hspace{1cm}}_{2}$
+    \item $2_{10} = \underline{\hspace{1cm}}_{2}$
+\end{enumerate}
+
+\end{multicols}
+\newpage
+
+\section*{Answer Key \blfootnote{Note: leading zeros are suggested but optional; trailing and sandwiched zeros are required.}}
+    
+\begin{multicols}{2}
+\subsection*{Binary $\rightarrow$ Decimal}
+Convert each 4-digit binary number to decimal.
+\vspace{0.5cm}
+
+\begin{enumerate}[label=\arabic*.]
+    \item $1101_2 = \textcolor{red}{13_{10}}$
+    \item $1010_2 = \textcolor{red}{10_{10}}$
+    \item $1111_2 = \textcolor{red}{15_{10}}$
+    \item $0100_2 = \textcolor{red}{4_{10}}$
+    \item $0011_2 = \textcolor{red}{3_{10}}$
+    \item $1000_2 = \textcolor{red}{8_{10}}$
+    \item $0110_2 = \textcolor{red}{6_{10}}$
+    \item $1100_2 = \textcolor{red}{12_{10}}$
+\end{enumerate}
+
+\subsection*{Decimal $\rightarrow$ Binary}
+Convert each decimal number to 4-digit binary.
+\vspace{0.5cm}
+
+\begin{enumerate}[label=\arabic*.]
+    \setcounter{enumi}{8}
+    \item $9_{10} = \textcolor{red}{1001_2}$
+    \item $15_{10} = \textcolor{red}{1111_2}$
+    \item $6_{10} = \textcolor{red}{0110_2}$
+    \item $10_{10} = \textcolor{red}{1010_2}$
+    \item $3_{10} = \textcolor{red}{0011_2}$
+    \item $12_{10} = \textcolor{red}{1100_2}$
+    \item $14_{10} = \textcolor{red}{1110_2}$
+    \item $2_{10} = \textcolor{red}{0010_2}$
+\end{enumerate}
+
+\end{multicols}
+\newpage
+
+\emph{Hexadecimal} is a base 16 number system. It uses the numerals 0--9 to represent their base 10 equivalents, but also uses the numerals A, B, C, D, E, and F to represent numbers 10--15 respectively. RGB colors are often represented as hexadecimals.
+
+\subsection{First Programs}
+
+\textit{Java} is a high-level\footnote{Low-level programming languages are machine-oriented and only a few levels away from machine code. High-level languages are more user-oriented and straightforward, being more distant from machine code.} programming language that allows programmers to execute \emph{algorithms}, or series of tasks. Java is the programming language that will be taught throughout this course. In this subsection, we will familiarize ourselves with the coding environment and learn about \textit{comments} and two basic functions: \mintinline{java}|print()| and \mintinline{java}|println()|.
+
+\subsubsection{Printing} \label{Printing}
+Upon opening a Java repl, you will be greeted with a file explorer, a text editor, and a console. The text editor is where we will enter Java code to get our computer to execute our algorithms, and the console is where we will see our outputs. Your text-editor should be auto-populated with the following code:
+
+\begin{minted}[linenos]{java}
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello world!");
+  }
+}
+\end{minted}
+
+We can ignore most of this code for now as we will learn about it later---just know that our code goes between the second set of curly braces. Try running this code. You can do so either by clicking the green "Run" button or by pressing \keystroke{Ctrl}\keystroke{Enter}. This basic program uses one of our functions of interest (\mintinline{java}|println()|) on line 3 to output "Hello world!" without quotes to the console when run. Now, try replacing the \mintinline{java}|println()| with \mintinline{java}|print()| and running this code. The exact same output is printed. So what's the difference between \mintinline{java}|println()| and \mintinline{java}|print()|?
+
+\vspace{0.5cm}
+
+Let's add another \mintinline{java}|println()| to our code and see what it does. Add a \newline \mintinline{java}|System.out.println()| statement directly below the existing one and enter any string of text you want to print in quotes between the parentheses. Your finished code should look something like this:
+
+\newpage
+
+\begin{minted}[linenos]{java}
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello world!");
+    System.out.println("I love Java!");
+  }
+}
+\end{minted}
+
+Let's run this code and see what happens. If everything went well, your console should display
+
+\small
+\begin{minted}{text}
+> sh -c javac -classpath .:target/dependency/* -d . $(find . -type f -name '*.java')
+> java -classpath .:target/dependency/* Main
+Hello world!
+I love Java!
+>
+\end{minted}
+
+\normalsize
+or whichever string of text you chose to print. (Disregard the first two lines, as those are referring to your Java installation. For the remainder of these notes, extraneous lines will be omitted when displaying outputs.) As expected, "I love Java" was printed to the console. Now, let's try switching the first \mintinline{java}|println()| to \mintinline{java}|print()|. Run the code again. What happens? Your output should be
+
+\small
+\begin{minted}{java}
+Hello world!I love Java!
+\end{minted}
+
+\normalsize
+Now, the difference between \mintinline{java}|println()| and \mintinline{java}|print()| is clear. \mintinline{java}|println()| prints the input and appends a new line (essentially pressing \keystroke{Enter} after printing) whereas \mintinline{java}|print()| only prints the input.
+
+\subsubsection{Comments}
+When programming, it is important to ensure your code is readable and easily understandable as it makes fixing problems easier and enables peer review. We can use \textit{comments} to help us acheive this. A comment is something we can insert in our code to "annotate" it. Comments are completely ignored by the computer and only exist to help humans understand their code. 
+
+\vspace{0.5cm}
+
+In Java, there are two types of comment: single-line comments and multi-line comments. You can make a single-line comment by typing \mintinline{java}|//|. When you do so, anything after the double slash and on the same line will be ignored. You can make a multi-line comment by typing \mintinline{java}|/* */|. In a multi-line comment, anything between the two asterisks will be ignored. Below is an example of both types of comments being used on the code block discussed in \ref{Printing}:
+
+\newpage
+
+\begin{minted}[linenos]{java}
+/* This is a multi-line comment.
+Anything typed between the two asterisks will be ignored.
+Multi-line comments are used to "annotate" code. */
+
+class Main {
+  public static void main(String[] args) {
+    System.out.print("Hello world!"); // This is a single line comment.
+    System.out.println("I love Java!"); // prints "I love Java!"
+  }
+}
+\end{minted}
+
+Use comments frequently in your code even if you're the only one who will see them. Comments help tremendously with debugging and allow you follow your algorithm step-by-step without reading code.
+
+\subsection{Variables}
+In Java, there are four distinct types of data: integers, doubles, booleans, and strings. Integers are whole numbers, doubles are decimal values, booleans are either true or false, and strings are a list of characters (like words). We can use \emph{variables} to store data. When we do so, we must first tell Java what type of data we would like to store in the variable. Then, we can tell Java what exactly we want the variable to store. This is shown below.
+
+\begin{minted}[linenos]{java}
+class Main {
+  public static void main(String[] args) {
+    int x;
+    x = 2;
+  }
+}
+\end{minted}
+
+On line 3, the code above declares a variable \mintinline{java}|x| and tells Java that \mintinline{java}|x| will store an integer. On line 4, the code assigns the value \mintinline{java}|2| to \mintinline{java}|x|. Anytime Java sees \mintinline{java}|x| from now on, it will interpret it as \mintinline{java}|2|. We can confirm that \mintinline{java}|x| really is \mintinline{java}|2| by telling Java to print \mintinline{java}|x|.
+
+\begin{minted}[linenos]{java}
+class Main {
+  public static void main(String[] args) {
+    int x; // declares an integer variable x
+    x = 2; // assigns x the value 2
+    System.out.println(x); // prints x
+  }
+}
+\end{minted}
+
+(Notice that when we print \mintinline{java}|x|, we do not put \mintinline{java}|x| in parentheses. In Java, anything entered in parentheses will be printed verbatim, not interpreted.)
+
+\newpage
+
+When run, this outputs \mintinline{java}|2|, confirming that \mintinline{java}|x == 2|.\footnote{When assigning variables in Java, a single equal sign (\mintinline{java}|=|) is used. When comparing two values in Java, a double equal sign (\mintinline{java}|==|) is used. For example, \mintinline{java}|x == 2| will be evaluated as \mintinline{java}|true| if \mintinline{java}|x| is \mintinline{java}|2| and \mintinline{java}|false| if \mintinline{java}|x| is not \mintinline{java}|2|.} We can make our code more concise by assigning it a type and a value simultaneously. To do so, we can combine lines 3 and 4 in the previous code as such:
+
+\begin{minted}[linenos]{java}
+class Main {
+  public static void main(String[] args) {
+    int x = 2; // declares an integer variable x that stores 2.
+    System.out.println(x); // prints x
+  }
+}
+\end{minted}
+
+When run, this code will also output \mintinline{java}|2| to the console.
+
+\vspace{0.5cm}
+
+We can do the same thing with doubles. Let's create a double \mintinline{java}|Pi| and assign it the value \mintinline{java}|3.14|.
+
+\begin{minted}[linenos]{java}
+class Main {
+  public static void main(String[] args) {
+    double Pi = 3.14; // declares a double Pi that stores 3.14
+    System.out.println(Pi); // prints Pi
+  }
+}
+\end{minted}
+
+As expected, 3.14 is output to the console. What happens if we declare an integer variable but assign it a double? Let's find out by replacing the \mintinline{java}|double| in the previous code with \mintinline{java}|int|. When we run the code, we get the output:
+
+\small
+\begin{minted}{text}
+error: incompatible types: possible lossy conversion from double to int
+    int Pi = 3.14;
+             ^
+1 error
+exit status 1
+\end{minted}
+
+\normalsize
+Uh oh! Our code did not run because it encountered an \textcolor{red}{error}. When this happens, it is important to read the error message as it often contains useful hints as to what went wrong. This error message is telling us that we used incompatible data types in our code as we tried to assign a \mintinline{java}|double| to an \mintinline{java}|int|. But what happens if we assign an integer to a double? In theory, no information is lost when storing an integer as a decimal, but does this hold up in practice? Let's check by running the following code that assigns an \mintinline{java}|int| (\mintinline{java}|5|) to a \mintinline{java}|double|.
+
+\begin{minted}[linenos]{java}
+class Main {
+  public static void main(String[] args) {
+    double num = 5; // declares a double num that stores 5
+    System.out.println(num); // prints num
+  }
+}
+\end{minted}
+
+We get the output \mintinline{java}|5.0|. Java converts the integer to a decimal but does not throw an error because no data is lost.
+
+\vspace{0.5cm}
+
+A special property of the \mintinline{java}|int| is that it always returns an \mintinline{java}|int| when operated on. For example, try printing \mintinline{java}|1 / 2| with the following code:
+
+\begin{minted}[linenos]{java}
+class Main {
+  public static void main(String[] args) {
+    System.out.println(1 / 2);
+  }
+}
+\end{minted}
+
+Curiously, \mintinline{java}|0| is output to the console instead of \mintinline{java}|0.5|. Why is this? Let's try \mintinline{java}|5 / 2| instead. This time, \mintinline{java}|2| is output to the console, ignoring the remainder. In Java, \mintinline{java}|int| operations \emph{always} return \mintinline{java}|int| values. So how can we get Java to correctly divide 5 by 2? An easy way to do this is to convert an \mintinline{java}|int| to a \mintinline{java}|double| as such:
+
+\begin{minted}[linenos]{java}
+class Main {
+  public static void main(String[] args) {
+    System.out.println(1.0 / 2);
+    // or
+    System.out.println(1 / 2.0);
+    // or
+    System.out.println(1.0 / 2.0);
+  }
+}
+\end{minted}
+
+While this property of Java may seem cumbersome to circumnavigate at first, it can be leveraged to our advantage as we will later see.
+
+\vspace{0.5cm}
+
+Now, let's familiarize ourselves with the \textcolor{BorlandBlue}{\mintinline{java}|String|} and \mintinline{java}|boolean| data types. Let's define and print a \textcolor{BorlandBlue}{\mintinline{java}|String|} variable and a \mintinline{java}|boolean| variable with the following code:
+
+\begin{minted}[linenos]{java}
+class Main {
+  public static void main(String[] args) {
+    String bestActor = "Danny DeVito";
+    boolean validity = true;
+    System.out.println(bestActor);
+    System.out.println(validity);
+  }
+}
+\end{minted}
+
+When run, this code outputs:
+
+\small
+\begin{minted}{text}
+Danny DeVito
+true
+\end{minted}
+
+\normalsize
+Once a variable is defined, you can change its value but not its type. For example, an \mintinline{java}|int| variable could store \mintinline{java}|2| then \mintinline{java}|5| then \mintinline{java}|1000|, but it can \emph{never} store \mintinline{java}|0.5| or \mintinline{java}|"Hello world!"| or \mintinline{java}|true|. In Java, attempting to change a variable's type will throw an \textcolor{red}{error}.
+
+\subsection{Expressions \& Assignment}
+Computers are useful because they can operate on data quickly and efficiently. Now, we will learn how to manipulate various data types. In this subsection, it is important to remember that operations on data types will always return the same data type. There are various operators we can apply to different data types. They are listed below\footnote{Boolean operators will be taught in detail later}.
+
+\begin{itemize}
+    \item \mintinline{java}|int|/\mintinline{java}|double|: addition (\mintinline{java}|+|), subtraction (\mintinline{java}|-|), multiplication (\mintinline{java}|*|), division (\mintinline{java}|/|), modulus\footnote{In Java, performing the modulus operation on two doubles will return the remainder. In most languages, modulus is exclusive to the \mintinline{java}|int| data type.} (\mintinline{java}|%|), increment (\mintinline{java}|++|), and decrement (\mintinline{java}|--|)
+
+    \item \textcolor{BorlandBlue}{\mintinline{java}|String|}: concatenate (\mintinline{java}|+|)
+\end{itemize}
+
+Let's use our newly acquired knowledge of Java operators to make a program that computes the circumference of a circle given its radius. We will need to use variable assignments to define the radius and $\pi$, we will need to use numeric operators to compute the circumference, and we will need to concatenate strings to present the output in an understandable form. This is shown below.
+
+\begin{minted}[linenos, breaklines]{java}
+class Main {
+  public static void main(String[] args) {
+    int radius = 5; // defines the radius of the circle
+    double Pi = 3.1415; // defines Pi, a necessary constant
+    double circumference = 2*Pi*radius; // computes the circumference of the circle
+    System.out.println("The circumference of a circle with radius " + radius + " is " + circumference + "."); // prints the circumference.
+  }
+}
+\end{minted}
+
+When run, the program correctly computes the circumference of a circle with radius 5 and uses string concatenation to print:
+
+\small
+\begin{minted}{text}
+The circumference of a circle with radius 5 is 31.415000000000003.
+\end{minted}
+
+
+
+\end{document}
+
+
